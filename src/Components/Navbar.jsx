@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import { userContext } from './UserProvider';
 
 const Navbar = () => {
-    let {logout} = useContext(userContext)
+    let { logout, user } = useContext(userContext)
+    console.log(user);
     return (
-        <div>
-            <div className="navbar bg-base-100">
+        <div className='bg-purple-200'>
+            <div className="navbar   container mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -31,15 +32,25 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 space-x-5">
-                       <Link to='/'>Home</Link>
-                       <Link to='/signUp'>Sign Up</Link>
-                       <Link to='/login'>Login</Link>
-                       <Link to='/blog'>Blog</Link>
-                       <button onClick={logout}>Sign Out</button>
+                        <Link to='/'>Home</Link>
+                        <Link to='/allToys'>All Toys</Link>
+                        {user && <Link to='/'>My Toys</Link>}
+                        {user && <Link to='/'>Add Toy</Link>}
+                        <Link to='/signUp'>Sign Up</Link>
+                        <Link to='/login'>Login</Link>
+                        <Link to='/blog'>Blog</Link>
+                        <button onClick={logout}>Sign Out</button>
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Get started</a>
+                    {user && <p className='mr-3'>Hi, <span className='font-bold'>{user.displayName}</span> </p>}
+                    {user ? <div className="avatar h-14 w-14">
+                        <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                            <img src={user.photoURL} />
+                        </div>
+                    </div>
+                        : <button>Login</button>}
+
                 </div>
             </div>
 

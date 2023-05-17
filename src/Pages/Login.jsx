@@ -4,7 +4,7 @@ import { userContext } from '../Components/UserProvider';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
-    let { signIn } = useContext(userContext)
+    let { signIn, googlePopUp } = useContext(userContext)
     let [err, setErr] = useState(null)
 
     let location = useLocation();
@@ -65,6 +65,9 @@ const Login = () => {
                                 </div>
                                 <div className="form-control mt-6">
                                    <input type="submit" value='Login' className='btn btn-primary' />
+                                </div>
+                                <div className="form-control mt-6">
+                                   <button onClick={googlePopUp} className='btn btn-outline btn-primary'>G</button>
                                 </div>
                             </div>
                         </form>

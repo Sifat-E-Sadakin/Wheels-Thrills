@@ -36,8 +36,14 @@ const router = createBrowserRouter([
         path: "/blog",
         element: <PrivateRoute><Blog></Blog></PrivateRoute>,
       },
+     
     ],
   },
+  {
+    path: '/*',
+    element: <h1>hohahaha</h1>
+  }
+ 
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
