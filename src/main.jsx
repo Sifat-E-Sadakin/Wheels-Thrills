@@ -13,6 +13,7 @@ import SignUp from './Pages/SignUp.jsx';
 import Blog from './Pages/Blog.jsx';
 import UserProvider from './Components/UserProvider.jsx';
 import PrivateRoute from './Components/PrivateRoute.jsx';
+import AddToy from './Pages/AddToy.jsx';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <PrivateRoute><Blog></Blog></PrivateRoute>,
+      },
+      {
+        path: "/addToy",
+        element: <PrivateRoute><AddToy></AddToy></PrivateRoute>,
       },
      
     ],

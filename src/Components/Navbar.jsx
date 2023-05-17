@@ -35,7 +35,7 @@ const Navbar = () => {
                         <Link to='/'>Home</Link>
                         <Link to='/allToys'>All Toys</Link>
                         {user && <Link to='/'>My Toys</Link>}
-                        {user && <Link to='/'>Add Toy</Link>}
+                        {user && <Link to='/addToy'>Add Toy</Link>}
                         <Link to='/signUp'>Sign Up</Link>
                         <Link to='/login'>Login</Link>
                         <Link to='/blog'>Blog</Link>
