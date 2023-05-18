@@ -5,6 +5,7 @@ import GallerySection from '../Components/GallerySection';
 import GallerySec from '../Components/GallerySec';
 import OnlineDelivery from '../Components/OnlineDelivery';
 import Stat from '../Components/Stat';
+import Sponsors from '../Components/Sponsors';
 
 const HomePage = () => {
     return (
@@ -14,6 +15,7 @@ const HomePage = () => {
             <ToyTabs></ToyTabs>
             <OnlineDelivery></OnlineDelivery>
             <Stat></Stat>
+            <Sponsors></Sponsors>
             
         </div>
     );

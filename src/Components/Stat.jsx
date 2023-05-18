@@ -19,7 +19,7 @@ const Stat = () => {
     
     return (
         <div className='container mx-auto flex justify-center '>
-            <div className="stats stats-vertical lg:stats-horizontal shadow">
+            <div className="stats stats-vertical lg:stats-horizontal shadow-2xl">
 
                 <div className="stat">
                     <div className="stat-figure text-primary">
