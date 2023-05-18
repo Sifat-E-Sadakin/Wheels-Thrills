@@ -34,7 +34,7 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal px-1 space-x-5">
                         <Link to='/'>Home</Link>
                         <Link to='/allToys'>All Toys</Link>
-                        {user && <Link to='/'>My Toys</Link>}
+                        {user && <Link to='/myToys'>My Toys</Link>}
                         {user && <Link to='/addToy'>Add Toy</Link>}
                         <Link to='/signUp'>Sign Up</Link>
                         <Link to='/login'>Login</Link>
