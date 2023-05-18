@@ -50,9 +50,10 @@ const ToyTabs = () => {
 
 
     return (
-        <div className='container mx-auto'>
-            <Tabs>
-                <TabList>
+        <div className='container mx-auto my-20'>
+            <h1 className='text-center text-4xl font-semibold my-12'>Find Your Vehicle From Different Category</h1>
+            <Tabs >
+                <TabList >
                     <Tab>Car</Tab>
                     <Tab>Bus</Tab>
                     <Tab>Truck</Tab>

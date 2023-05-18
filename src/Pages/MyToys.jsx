@@ -29,7 +29,7 @@ const MyToys = () => {
 
     return (
         <div className='container mx-auto'>
-            <h1>my Toys</h1>
+            <h1 className='text-center text-3xl my-10'>Toys of {user.displayName}</h1>
             <div className=''>
                
 

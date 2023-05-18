@@ -6,7 +6,7 @@ const Navbar = () => {
     let { logout, user } = useContext(userContext)
     console.log(user);
     return (
-        <div className='bg-purple-200'>
+        <div className='bg-purple-300'>
             <div className="navbar   container mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
