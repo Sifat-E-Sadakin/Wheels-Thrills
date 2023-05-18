@@ -13,6 +13,13 @@ const Login = () => {
 
     let go = location.state?.from?.pathname || '/';
 
+    let handelGooglePopUp = ( )=>{
+        googlePopUp()
+        .then(user=>{
+            navigate(go)
+        })
+    }
+
 
     let submit = event => {
         event.preventDefault();
@@ -67,7 +74,7 @@ const Login = () => {
                                    <input type="submit" value='Login' className='btn btn-primary' />
                                 </div>
                                 <div className="form-control mt-6">
-                                   <button onClick={googlePopUp} className='btn btn-outline btn-primary'>G</button>
+                                   <button onClick={handelGooglePopUp} className='btn btn-outline btn-primary'>G</button>
                                 </div>
                             </div>
                         </form>

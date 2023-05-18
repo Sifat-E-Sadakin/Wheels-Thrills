@@ -3,6 +3,7 @@ import 'react-tabs/style/react-tabs.css';
 
 import React, { useEffect, useState } from 'react';
 import { Rating } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 
 
@@ -60,93 +61,101 @@ const ToyTabs = () => {
                 </TabList>
 
                 <TabPanel >
-                  <div className='grid grid-cols-3'>
-                  {
-                        cars.map(vehicle => <div  key={vehicle._id}>
-                            <div className="card card-compact w-96 bg-base-100 shadow-xl">
-                                <figure><img src={vehicle.photo} alt="Shoes" /></figure>
-                                <div className="card-body">
-                                    <h2 className="card-title">{vehicle.tName}</h2>
-                                    <div>
-                                        <p>Price : <span>{vehicle.price} Taka /=</span></p>
+                    <div className='grid grid-cols-3'>
+                        {
+                            cars.map(vehicle => <div key={vehicle._id}>
+                                <div className="card card-compact w-96 bg-base-100 shadow-xl">
+                                    <figure><img src={vehicle.photo} alt="Shoes" /></figure>
+                                    <div className="card-body">
+                                        <h2 className="card-title">{vehicle.tName}</h2>
+                                        <div>
+                                            <p>Price : <span>{vehicle.price} Taka /=</span></p>
 
-                                    </div>
-                                    <div className="card-actions justify-between">
-                                        <Rating name="read-only" value={vehicle.rating} precision={0.5} readOnly />
-                                        <button className="btn btn-primary">View Details</button>
+                                        </div>
+                                        <div className="card-actions justify-between">
+                                            <div className='flex gap-3'>
+                                                <Rating name="read-only" value={vehicle.rating} precision={0.5} readOnly /> <span>{vehicle.rating}</span>
+                                            </div>
+                                            <Link to={`/toyDetails/${vehicle._id}`}><button className='btn btn-primary'>View Details</button></Link>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>)
-                    }
-                  </div>
+                            </div>)
+                        }
+                    </div>
                 </TabPanel>
                 <TabPanel>
-                   <div className='grid grid-cols-2'>
-                   {
-                        bus.map(vehicle => <div key={vehicle._id}>
-                            <div className="card card-compact w-96 bg-base-100 shadow-xl">
-                                <figure><img src={vehicle.photo} alt="Shoes" /></figure>
-                                <div className="card-body">
-                                    <h2 className="card-title">{vehicle.tName}</h2>
-                                    <div>
-                                        <p>Price : <span>{vehicle.price} Taka /=</span></p>
+                    <div className='grid grid-cols-2'>
+                        {
+                            bus.map(vehicle => <div key={vehicle._id}>
+                                <div className="card card-compact w-96 bg-base-100 shadow-xl">
+                                    <figure><img src={vehicle.photo} alt="Shoes" /></figure>
+                                    <div className="card-body">
+                                        <h2 className="card-title">{vehicle.tName}</h2>
+                                        <div>
+                                            <p>Price : <span>{vehicle.price} Taka /=</span></p>
 
-                                    </div>
-                                    <div className="card-actions justify-between">
-                                        <Rating name="read-only" value={vehicle.rating} precision={0.5} readOnly />
-                                        <button className="btn btn-primary">View Details</button>
+                                        </div>
+                                        <div className="card-actions justify-between">
+                                            <div className='flex gap-3'>
+                                                <Rating name="read-only" value={vehicle.rating} precision={0.5} readOnly /> <span>{vehicle.rating}</span>
+                                            </div>
+                                            <Link to={`/toyDetails/${vehicle._id}`}><button className='btn btn-primary'>View Details</button></Link>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>)
-                    }
+                            </div>)
+                        }
 
-                   </div>
+                    </div>
                 </TabPanel>
                 <TabPanel >
-                   <div className='grid grid-cols-3' >
-                   {
-                        trucks.map(vehicle => <div  key={vehicle._id}>
-                            <div className="card card-compact w-96 bg-base-100 shadow-xl">
-                                <figure><img src={vehicle.photo} alt="Shoes" /></figure>
-                                <div className="card-body">
-                                    <h2 className="card-title">{vehicle.tName}</h2>
-                                    <div>
-                                        <p>Price : <span>{vehicle.price} Taka /=</span></p>
+                    <div className='grid grid-cols-3' >
+                        {
+                            trucks.map(vehicle => <div key={vehicle._id}>
+                                <div className="card card-compact w-96 bg-base-100 shadow-xl">
+                                    <figure><img src={vehicle.photo} alt="Shoes" /></figure>
+                                    <div className="card-body">
+                                        <h2 className="card-title">{vehicle.tName}</h2>
+                                        <div>
+                                            <p>Price : <span>{vehicle.price} Taka /=</span></p>
 
-                                    </div>
-                                    <div className="card-actions justify-between">
-                                        <Rating name="read-only" value={vehicle.rating} precision={0.5} readOnly />
-                                        <button className="btn btn-primary">View Details</button>
+                                        </div>
+                                        <div className="card-actions justify-between">
+                                            <div className='flex gap-3'>
+                                                <Rating name="read-only" value={vehicle.rating} precision={0.5} readOnly /> <span>{vehicle.rating}</span>
+                                            </div>
+                                            <Link to={`/toyDetails/${vehicle._id}`}><button className='btn btn-primary'>View Details</button></Link>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>)
-                    }
-                   </div>
+                            </div>)
+                        }
+                    </div>
                 </TabPanel>
                 <TabPanel>
-                  <div className='grid grid-cols-3'>
-                  {
-                        train.map(vehicle => <div  key={vehicle._id}>
-                            <div className="card card-compact w-96 bg-base-100 shadow-xl">
-                                <figure><img src={vehicle.photo} alt="Shoes" /></figure>
-                                <div className="card-body">
-                                    <h2 className="card-title">{vehicle.tName}</h2>
-                                    <div>
-                                        <p>Price : <span>{vehicle.price} Taka /=</span></p>
+                    <div className='grid grid-cols-3'>
+                        {
+                            train.map(vehicle => <div key={vehicle._id}>
+                                <div className="card card-compact w-96 bg-base-100 shadow-xl">
+                                    <figure><img src={vehicle.photo} alt="Shoes" /></figure>
+                                    <div className="card-body">
+                                        <h2 className="card-title">{vehicle.tName}</h2>
+                                        <div>
+                                            <p>Price : <span>{vehicle.price} Taka /=</span></p>
 
-                                    </div>
-                                    <div className="card-actions justify-between">
-                                        <Rating name="read-only" value={vehicle.rating} precision={0.5} readOnly />
-                                        <button className="btn btn-primary">View Details</button>
+                                        </div>
+                                        <div className="card-actions justify-between">
+                                            <div className='flex gap-3'>
+                                                <Rating name="read-only" value={vehicle.rating} precision={0.5} readOnly /> <span>{vehicle.rating}</span>
+                                            </div>
+                                            <Link to={`/toyDetails/${vehicle._id}`}><button className='btn btn-primary'>View Details</button></Link>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>)
-                    }
-                  </div>
+                            </div>)
+                        }
+                    </div>
                 </TabPanel>
             </Tabs>
 

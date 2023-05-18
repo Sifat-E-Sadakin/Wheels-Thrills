@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const AllToys = () => {
 
@@ -99,7 +99,7 @@ const AllToys = () => {
                                 <td>{toy.price} /=</td>
                                 <td>{toy.quantity}</td>
                                 <th>
-                                    <button className="btn btn-ghost btn-xs">View Details</button>
+                                    <Link to={`/toyDetails/${toy._id}`}><button className="btn btn-ghost btn-xs">View Details</button></Link>
                                 </th>
                             </tr>
                             )
