@@ -62,7 +62,7 @@ const ToyTabs = () => {
                 <TabPanel >
                   <div className='grid grid-cols-3'>
                   {
-                        cars.map(vehicle => <div>
+                        cars.map(vehicle => <div  key={vehicle._id}>
                             <div className="card card-compact w-96 bg-base-100 shadow-xl">
                                 <figure><img src={vehicle.photo} alt="Shoes" /></figure>
                                 <div className="card-body">
@@ -84,7 +84,7 @@ const ToyTabs = () => {
                 <TabPanel>
                    <div className='grid grid-cols-2'>
                    {
-                        bus.map(vehicle => <div>
+                        bus.map(vehicle => <div key={vehicle._id}>
                             <div className="card card-compact w-96 bg-base-100 shadow-xl">
                                 <figure><img src={vehicle.photo} alt="Shoes" /></figure>
                                 <div className="card-body">
@@ -107,7 +107,7 @@ const ToyTabs = () => {
                 <TabPanel >
                    <div className='grid grid-cols-3' >
                    {
-                        trucks.map(vehicle => <div>
+                        trucks.map(vehicle => <div  key={vehicle._id}>
                             <div className="card card-compact w-96 bg-base-100 shadow-xl">
                                 <figure><img src={vehicle.photo} alt="Shoes" /></figure>
                                 <div className="card-body">
@@ -129,7 +129,7 @@ const ToyTabs = () => {
                 <TabPanel>
                   <div className='grid grid-cols-3'>
                   {
-                        train.map(vehicle => <div>
+                        train.map(vehicle => <div  key={vehicle._id}>
                             <div className="card card-compact w-96 bg-base-100 shadow-xl">
                                 <figure><img src={vehicle.photo} alt="Shoes" /></figure>
                                 <div className="card-body">

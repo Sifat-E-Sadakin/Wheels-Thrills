@@ -14,6 +14,7 @@ import Blog from './Pages/Blog.jsx';
 import UserProvider from './Components/UserProvider.jsx';
 import PrivateRoute from './Components/PrivateRoute.jsx';
 import AddToy from './Pages/AddToy.jsx';
+import AllToys from './Pages/AllToys.jsx';
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,11 @@ const router = createBrowserRouter([
       {
         path: "/addToy",
         element: <PrivateRoute><AddToy></AddToy></PrivateRoute>,
+      },
+      {
+        path: "/allToys",
+        element: <AllToys></AllToys>,
+        loader: ()=> fetch('https://assignment-11-back-end.vercel.app/toys')
       },
      
     ],
