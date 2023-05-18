@@ -4,7 +4,7 @@ import bg from './../../public/images/BG/black-friday-elements-assortment.jpg'
 const Banner = () => {
     return (
         <div className=' ' >
-            <div className="bg-[url('../../public/images/BG/black-friday-elements-assortment.jpg')] bg-cover bg-center bg-no-repeat  ">
+            <div className="bg-[url('/images/BG/black-friday-elements-assortment.jpg')] bg-cover bg-center bg-no-repeat  ">
                 <div className='container mx-auto h-[620px] '>
                     <h1 className='text-5xl font-semibold pt-24' >Unleash the <br /> thrill of <br /> Wheels & Thrills!</h1>
                     <p className='w-1/2 text-lg mt-5'>
