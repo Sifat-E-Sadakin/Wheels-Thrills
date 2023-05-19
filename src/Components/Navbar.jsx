@@ -42,8 +42,8 @@ const Navbar = () => {
                         <button onClick={logout}>Sign Out</button>
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    {user && <p className='mr-3'>Hi, <span className='font-bold'>{user.displayName}</span> </p>}
+                <div className="navbar-end ">
+                    {user && <p id='hide' className='lg:mr-3 '>Hi, <span className='font-bold  '>{user.displayName}</span> </p>}
                     {user ? <div className="avatar h-14 w-14">
                         <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                             <img src={user.photoURL} />

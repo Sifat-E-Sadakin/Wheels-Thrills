@@ -62,7 +62,7 @@ const ToyTabs = () => {
                 </TabList>
 
                 <TabPanel >
-                    <div className='grid grid-cols-3'>
+                    <div className='grid lg:grid-cols-3 space-y-5'>
                         {
                             cars.map(vehicle => <div key={vehicle._id}>
                                 <div className="card card-compact w-96 bg-base-100 shadow-xl">
