@@ -62,7 +62,7 @@ const ToyTabs = () => {
                 </TabList>
 
                 <TabPanel >
-                    <div className='grid lg:grid-cols-3 space-y-5'>
+                    <div className='grid lg:grid-cols-3 gap-5 '>
                         {
                             cars.map(vehicle => <div key={vehicle._id}>
                                 <div className="card card-compact w-96 bg-base-100 shadow-xl">
@@ -70,12 +70,12 @@ const ToyTabs = () => {
                                     <div className="card-body">
                                         <h2 className="card-title">{vehicle.tName}</h2>
                                         <div>
-                                            <p>Price : <span>{vehicle.price} Taka /=</span></p>
+                                            <p className='text-base font-medium'>Price : <span className='font-medium'>{vehicle.price} Taka /=</span></p>
 
                                         </div>
                                         <div className="card-actions justify-between">
                                             <div className='flex gap-3'>
-                                                <Rating name="read-only" value={vehicle.rating} precision={0.5} readOnly /> <span>{vehicle.rating}</span>
+                                                <Rating name="read-only" value={vehicle.rating} precision={0.5} readOnly /> <span className='text-base font-normal'>{vehicle.rating}</span>
                                             </div>
                                             <Link to={`/toyDetails/${vehicle._id}`}><button className='btn btn-primary'>View Details</button></Link>
                                         </div>
@@ -86,7 +86,7 @@ const ToyTabs = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className='grid lg:grid-cols-3 space-y-5'>
+                    <div className='grid lg:grid-cols-3 gap-5'>
                         {
                             bus.map(vehicle => <div key={vehicle._id}>
                                 <div className="card card-compact w-96 bg-base-100 shadow-xl">
@@ -94,12 +94,12 @@ const ToyTabs = () => {
                                     <div className="card-body">
                                         <h2 className="card-title">{vehicle.tName}</h2>
                                         <div>
-                                            <p>Price : <span>{vehicle.price} Taka /=</span></p>
+                                            <p className='text-base font-medium'>Price : <span className='font-medium'>{vehicle.price} Taka /=</span></p>
 
                                         </div>
                                         <div className="card-actions justify-between">
                                             <div className='flex gap-3'>
-                                                <Rating name="read-only" value={vehicle.rating} precision={0.5} readOnly /> <span>{vehicle.rating}</span>
+                                                <Rating name="read-only" value={vehicle.rating} precision={0.5} readOnly /> <span className='text-base font-normal'>{vehicle.rating}</span>
                                             </div>
                                             <Link to={`/toyDetails/${vehicle._id}`}><button className='btn btn-primary'>View Details</button></Link>
                                         </div>
@@ -111,7 +111,7 @@ const ToyTabs = () => {
                     </div>
                 </TabPanel>
                 <TabPanel >
-                    <div className='grid lg:grid-cols-3 space-y-5'>
+                    <div className='grid lg:grid-cols-3 gap-5'>
                         {
                             trucks.map(vehicle => <div key={vehicle._id}>
                                 <div className="card card-compact w-96 bg-base-100 shadow-xl">
@@ -119,12 +119,12 @@ const ToyTabs = () => {
                                     <div className="card-body">
                                         <h2 className="card-title">{vehicle.tName}</h2>
                                         <div>
-                                            <p>Price : <span>{vehicle.price} Taka /=</span></p>
+                                            <p className='text-base font-medium'>Price : <span className='font-medium'>{vehicle.price} Taka /=</span></p>
 
                                         </div>
                                         <div className="card-actions justify-between">
                                             <div className='flex gap-3'>
-                                                <Rating name="read-only" value={vehicle.rating} precision={0.5} readOnly /> <span>{vehicle.rating}</span>
+                                                <Rating name="read-only" value={vehicle.rating} precision={0.5} readOnly /> <span className='text-base font-normal'>{vehicle.rating}</span>
                                             </div>
                                             <Link to={`/toyDetails/${vehicle._id}`}><button className='btn btn-primary'>View Details</button></Link>
                                         </div>
@@ -135,7 +135,7 @@ const ToyTabs = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className='grid lg:grid-cols-3 space-y-5'>
+                    <div className='grid lg:grid-cols-3 gap-5'>
                         {
                             train.map(vehicle => <div key={vehicle._id}>
                                 <div className="card card-compact w-96 bg-base-100 shadow-xl">
@@ -143,12 +143,12 @@ const ToyTabs = () => {
                                     <div className="card-body">
                                         <h2 className="card-title">{vehicle.tName}</h2>
                                         <div>
-                                            <p>Price : <span>{vehicle.price} Taka /=</span></p>
+                                            <p className='text-base font-medium'>Price : <span className='font-medium'>{vehicle.price} Taka /=</span></p>
 
                                         </div>
                                         <div className="card-actions justify-between">
                                             <div className='flex gap-3'>
-                                                <Rating name="read-only" value={vehicle.rating} precision={0.5} readOnly /> <span>{vehicle.rating}</span>
+                                                <Rating name="read-only" value={vehicle.rating} precision={0.5} readOnly /> <span className='text-base font-normal'>{vehicle.rating}</span>
                                             </div>
                                             <Link to={`/toyDetails/${vehicle._id}`}><button className='btn btn-primary'>View Details</button></Link>
                                         </div>

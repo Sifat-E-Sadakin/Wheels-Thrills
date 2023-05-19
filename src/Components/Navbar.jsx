@@ -1,6 +1,10 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { userContext } from './UserProvider';
+import logo from './../../public/images/Logo/Screenshot_2023-05-19_225627-removebg-preview.png'
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip as ReactTooltip, Tooltip } from 'react-tooltip'
+
 
 const Navbar = () => {
     let { logout, user } = useContext(userContext)
@@ -14,21 +18,23 @@ const Navbar = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><a>Item 1</a></li>
-                            <li tabIndex={0}>
-                                <a className="justify-between">
-                                    Parent
-                                    <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-                                </a>
-                                <ul className="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
-                            </li>
-                            <li><a>Item 3</a></li>
+                            <Link to='/'>Home</Link>
+                            <Link to='/allToys'>All Toys</Link>
+                            {user && <Link to='/myToys'>My Toys</Link>}
+                            {user && <Link to='/addToy'>Add Toy</Link>}
+                            <Link to='/blog'>Blog</Link>
+                            {user ? <></> : <Link to='/signUp'>Sign Up</Link>}
+                            {/* <Link to='/login'>Login</Link> */}
+                            {user && <button onClick={logout}>Sign Out</button>}
                         </ul>
                     </div>
-                    <Link to='/' className="btn btn-ghost normal-case text-xl">Wheels & Thrills</Link>
+                    <div className='flex items-center flex-col'>
+                        <Link to='/' className="btn btn-ghost normal-case text-xl"><img src={logo} alt="" /> </Link>
+                        <span id='hide' className='text-lg font-bold'>Wheels & Thrills</span>
+
+                    </div>
+
+
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 space-x-5">
@@ -36,24 +42,24 @@ const Navbar = () => {
                         <Link to='/allToys'>All Toys</Link>
                         {user && <Link to='/myToys'>My Toys</Link>}
                         {user && <Link to='/addToy'>Add Toy</Link>}
-                        <Link to='/signUp'>Sign Up</Link>
-                        <Link to='/login'>Login</Link>
                         <Link to='/blog'>Blog</Link>
-                        <button onClick={logout}>Sign Out</button>
+                        {user ? <></> : <Link to='/signUp'>Sign Up</Link>}
+                        {/* <Link to='/login'>Login</Link> */}
+                        {user && <button onClick={logout}>Sign Out</button>}
                     </ul>
                 </div>
                 <div className="navbar-end ">
-                    {user && <p id='hide' className='lg:mr-3 '>Hi, <span className='font-bold  '>{user.displayName}</span> </p>}
+                    {user && <p className='lg:mr-3 '>Hi, <span className='font-bold  '>{user.displayName}</span> </p>}
                     {user ? <div className="avatar h-14 w-14">
                         <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                            <img src={user.photoURL} />
+                            <img data-tooltip-id='my-tooltip' data-tooltip-content={user ? user.displayName : <span>User Name</span>} src={user.photoURL} />
                         </div>
                     </div>
-                        : <button>Login</button>}
+                        : <Link to='/login'><button className='btn btn-primary'>Login</button></Link>}
 
                 </div>
             </div>
-
+            <Tooltip id="my-tooltip" />
         </div>
     );
 };

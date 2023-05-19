@@ -41,8 +41,9 @@ const UpdateToy = () => {
 
     }
     return (
-        <div>
-            <form onSubmit={submit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div className=' container mx-auto '>
+            <h1 className='text-3xl font-semibold my-10 text-center'> Update Toy Info</h1>
+            <form onSubmit={submit} className="bg-purple-200 max-w-xl mx-auto shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 <div className="mb-4">
                     <label htmlFor="price" className="block text-gray-700 text-sm font-bold mb-2">
                         Price

@@ -54,7 +54,7 @@ const AllToys = () => {
 
     return (
         <div className='container mx-auto'>
-            <div className='text-center text-3xl my-10'>
+            <div className='text-center text-3xl my-10 space-y-5'>
                 <h1>List Of All Available Toys</h1>
                 
                 <div className='space-x-3 items-center'>

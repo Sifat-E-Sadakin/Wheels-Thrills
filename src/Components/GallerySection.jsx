@@ -11,7 +11,7 @@ const GallerySection = () => {
             <div data-aos="fade-down" className='container mx-auto'>
                 <h1 className='text-4xl font-semibold text-center my-14' >Best-rated Toys</h1>
                 
-                <Marquee className='rounded-xl'  >
+                <Marquee pauseOnHover={true} className='rounded-xl'  >
                 <div className="carousel carousel-center ">
                     
                     <div className="carousel-item max-w-sm">

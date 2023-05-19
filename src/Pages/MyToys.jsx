@@ -70,7 +70,7 @@ const MyToys = () => {
         <div className='container mx-auto'>
             <h1 className='text-center text-3xl my-10'>Toys of {user.displayName}</h1>
 
-            <div>
+            <div className='flex justify-end'>
                 <select id="order" className='btn btn-primary btn-outline'  onChange={handleChange}>
                     <option value="">Sort by Price</option>
                     <option value="ascending">Ascending</option>
