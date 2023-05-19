@@ -8,11 +8,12 @@ const MyToys = () => {
     let { user } = useContext(userContext);
 
     let [toys, setToys] = useState([])
-   
-    let { email } = user
-   
+    // const [order, setOrder] = useState('');
 
-    let remove = async (id)=>{
+    let { email } = user
+
+
+    let remove = async (id) => {
         Swal.fire({
             title: 'Are you sure?',
             text: "Item will be removed permanently!",
@@ -21,38 +22,60 @@ const MyToys = () => {
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!'
-          }).then((result) => {
+        }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://assignment-11-back-end.vercel.app/remove/${id}`,{
+                fetch(`https://assignment-11-back-end.vercel.app/remove/${id}`, {
                     method: 'DELETE'
                 })
-                .then(res=> res.json())
-               
-              Swal.fire(
-                'Deleted!',
-                'Item has been deleted.',
-                'success'
-              )
+                    .then(res => res.json())
+
+                Swal.fire(
+                    'Deleted!',
+                    'Item has been deleted.',
+                    'success'
+                )
             }
-          })
-
-       
-       
-
-
+        })
     }
 
+
+    let handleChange = event =>{
+        
+        let order= event.target.value;
+        if(order=='ascending'){
+            fetch(`http://localhost:3000/asort?email=${email}`)
+            .then(res=> res.json())
+            .then(data=> setToys(data))
+
+        }
+        if(order=='descending'){
+            fetch(`http://localhost:3000/dsort?email=${email}`)
+            .then(res=> res.json())
+            .then(data=> setToys(data))
+
+        }
+        
+    }
+    // console.log(order);
     useEffect(() => {
         fetch(`https://assignment-11-back-end.vercel.app/email?email=${email}`)
             .then(res => res.json())
             .then(data => setToys(data))
-    }, [toys])
+    }, [])
 
     return (
         <div className='container mx-auto'>
             <h1 className='text-center text-3xl my-10'>Toys of {user.displayName}</h1>
+
+            <div>
+                <select id="order"  onChange={handleChange}>
+                    <option value="">Sort by Price</option>
+                    <option value="ascending">Ascending</option>
+                    <option value="descending">Descending</option>
+                </select>
+            </div>
             <div className=''>
-               
+
 
 
                 <div className="overflow-x-auto w-full">
@@ -80,7 +103,7 @@ const MyToys = () => {
                                 toys.map(toy => < tr key={toy._id}>
 
                                     <th>
-                                        <button onClick={()=>remove(toy._id)} className="btn btn-circle btn-outline btn-sm">
+                                        <button onClick={() => remove(toy._id)} className="btn btn-circle btn-outline btn-sm">
                                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                                         </button>
                                     </th>
