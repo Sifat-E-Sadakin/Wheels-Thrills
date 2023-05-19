@@ -43,13 +43,13 @@ const MyToys = () => {
         
         let order= event.target.value;
         if(order=='ascending'){
-            fetch(`http://localhost:3000/asort?email=${email}`)
+            fetch(`https://assignment-11-back-end.vercel.app/asort?email=${email}`)
             .then(res=> res.json())
             .then(data=> setToys(data))
 
         }
         if(order=='descending'){
-            fetch(`http://localhost:3000/dsort?email=${email}`)
+            fetch(`https://assignment-11-back-end.vercel.app/dsort?email=${email}`)
             .then(res=> res.json())
             .then(data=> setToys(data))
 
@@ -68,7 +68,7 @@ const MyToys = () => {
             <h1 className='text-center text-3xl my-10'>Toys of {user.displayName}</h1>
 
             <div>
-                <select id="order"  onChange={handleChange}>
+                <select id="order" className='btn btn-primary btn-outline'  onChange={handleChange}>
                     <option value="">Sort by Price</option>
                     <option value="ascending">Ascending</option>
                     <option value="descending">Descending</option>
