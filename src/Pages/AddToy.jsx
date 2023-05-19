@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import { userContext } from '../Components/UserProvider';
+import Swal from 'sweetalert2'
+
 
 const AddToy = () => {
 
@@ -18,7 +20,7 @@ const AddToy = () => {
         let quantity = event.target.quantity.value;
         let description = event.target.description.value;
 
-        console.log({photo,tName,sName, sEmail, subcategory, price, rating,quantity, description} );
+        // console.log({photo,tName,sName, sEmail, subcategory, price, rating,quantity, description} );
         let toy = {photo,tName,sName, sEmail, subcategory, price, rating,quantity, description}
         fetch('https://assignment-11-back-end.vercel.app/addToy',{
             method: 'POST',
@@ -29,8 +31,11 @@ const AddToy = () => {
         })
         .then(res=> res.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
             if(data.acknowledged){
+                Swal.fire(`${tName}`,
+                'Added Successfully',
+                'success')
                 event.target.reset()
             }
         })
@@ -48,6 +53,7 @@ const AddToy = () => {
                         id="toyName"
                         className="w-full px-3 py-2 border border-gray-300 rounded"
                         name='photo'
+                        required
                     />
                 </div>
                 <div className="mb-4">
@@ -59,6 +65,7 @@ const AddToy = () => {
                         id="toyName"
                         className="w-full px-3 py-2 border border-gray-300 rounded"
                         name='tName'
+                        required
                     />
                 </div>
                 <div className="mb-4">
@@ -71,6 +78,7 @@ const AddToy = () => {
                         className="w-full px-3 py-2 border border-gray-300 rounded"
                         name='sName'
                         defaultValue={user && user.displayName}
+                        required
                     />
                 </div>
                 <div className="mb-4">
@@ -80,6 +88,7 @@ const AddToy = () => {
                     <input
                         type="email"
                         id="sellerEmail"
+                        required
                         className="w-full px-3 py-2 border border-gray-300 rounded"
                         name='sEmail'
                         defaultValue={user && user.email}
@@ -91,6 +100,7 @@ const AddToy = () => {
                     </label>
                     <select
                         id="subcategory"
+                        required
                         className="w-full px-3 py-2 border border-gray-300 rounded"
                         name='subcategory'
                     >
@@ -110,6 +120,7 @@ const AddToy = () => {
                         id="price"
                         className="w-full px-3 py-2 border border-gray-300 rounded"
                         name='price'
+                        required
                     />
                 </div>
                 <div className="mb-4">
@@ -121,6 +132,7 @@ const AddToy = () => {
                         id="rating"
                         className="w-full px-3 py-2 border border-gray-300 rounded"
                         name='rating'
+                        required
                     />
                 </div>
                 <div className="mb-4">
@@ -132,6 +144,7 @@ const AddToy = () => {
                         id="quantity"
                         className="w-full px-3 py-2 border border-gray-300 rounded"
                         name='quantity'
+                        required
                     />
                 </div>
                 <div className="mb-4">
@@ -140,6 +153,7 @@ const AddToy = () => {
                     </label>
                     <textarea
                         id="description"
+                        required
                         className="w-full px-3 py-2 border border-gray-300 rounded"
                        name='description'
                     />

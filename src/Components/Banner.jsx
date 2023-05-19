@@ -1,5 +1,6 @@
 import React from 'react';
 import bg from './../../public/images/BG/black-friday-elements-assortment.jpg'
+import './styles/Banner.css'
 
 const Banner = () => {
     return (

@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { userContext } from '../Components/UserProvider';
 import { Link } from 'react-router-dom';
+import { data } from 'autoprefixer';
+import Swal from 'sweetalert2';
 
 const MyToys = () => {
     let { user } = useContext(userContext);
@@ -11,11 +13,30 @@ const MyToys = () => {
    
 
     let remove = async (id)=>{
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "Item will be removed permanently!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`https://assignment-11-back-end.vercel.app/remove/${id}`,{
+                    method: 'DELETE'
+                })
+                .then(res=> res.json())
+               
+              Swal.fire(
+                'Deleted!',
+                'Item has been deleted.',
+                'success'
+              )
+            }
+          })
 
-        let res = await fetch(`https://assignment-11-back-end.vercel.app/remove/${id}`,{
-            method: 'DELETE'
-        })
-        let data = await res.json();
+       
        
 
 

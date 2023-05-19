@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const UpdateToy = () => {
 
@@ -25,7 +26,15 @@ const UpdateToy = () => {
             body: JSON.stringify(info)
         })
         .then(res=> res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            if(data.modifiedCount>0){
+                Swal.fire(
+                    'Updated Successfully',
+                    'Now you can see the updated item',
+                    'success'
+                  )
+            }
+        })
 
     }
     return (
@@ -70,8 +79,9 @@ const UpdateToy = () => {
                 <button
                     type="submit"
                     className="btn btn-primary"
+                
                 >
-                    Submit
+                    update
                 </button>
             </form>
 

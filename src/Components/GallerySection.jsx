@@ -10,8 +10,8 @@ const GallerySection = () => {
             <div className='container mx-auto'>
                 <h1 className='text-4xl font-semibold text-center my-14' >Best-rated Toys</h1>
                 
-                <Marquee   >
-                <div className="carousel carousel-center rounded-box">
+                <Marquee className='rounded-xl'  >
+                <div className="carousel carousel-center ">
                     
                     <div className="carousel-item max-w-sm">
                         <img src="https://images.pexels.com/photos/385997/pexels-photo-385997.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Pizza" />
