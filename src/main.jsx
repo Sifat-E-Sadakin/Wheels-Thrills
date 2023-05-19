@@ -18,6 +18,7 @@ import AllToys from './Pages/AllToys.jsx';
 import ToyDetails from './Pages/ToyDetails.jsx';
 import MyToys from './Pages/MyToys.jsx';
 import UpdateToy from './Pages/UpdateToy.jsx';
+import NotFound from './Pages/NotFound.jsx';
 
 const router = createBrowserRouter([
   {
@@ -74,7 +75,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/*',
-    element: <h1>hohahaha</h1>
+    element: <NotFound></NotFound>
   }
  
 ]);
