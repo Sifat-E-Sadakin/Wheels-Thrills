@@ -3,8 +3,11 @@ import { userContext } from '../Components/UserProvider';
 import { Link } from 'react-router-dom';
 import { data } from 'autoprefixer';
 import Swal from 'sweetalert2';
+import useTitle from '../Hooks/useTitle';
 
 const MyToys = () => {
+
+    useTitle('My Toys')
     let { user } = useContext(userContext);
 
     let [toys, setToys] = useState([])

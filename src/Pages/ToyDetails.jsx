@@ -1,8 +1,11 @@
 import { Rating } from '@mui/material';
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../Hooks/useTitle';
 
 const ToyDetails = () => {
+
+    useTitle('Toy Details')
     let toy = useLoaderData();
     console.log(toy);
     return (

@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import picture from './../../public/images/Login/Data_security_05.jpg'
 import { userContext } from '../Components/UserProvider';
+import useTitle from '../Hooks/useTitle';
 
 const SignUp = () => {
 
@@ -9,6 +10,8 @@ const SignUp = () => {
     let [err, setErr] = useState(null)
 
     let submit = event =>{
+
+        useTitle('Sign Up')
         event.preventDefault();
 
         let email = event.target.email.value

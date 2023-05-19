@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import useTitle from '../Hooks/useTitle';
 
 const AllToys = () => {
+
+    useTitle('All Toys')
 
     let toys = useLoaderData();
 

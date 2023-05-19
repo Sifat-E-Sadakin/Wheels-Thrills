@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import { userContext } from '../Components/UserProvider';
 import Swal from 'sweetalert2'
+import useTitle from '../Hooks/useTitle';
 
 
 const AddToy = () => {
 
+    useTitle('Add Toy')
     let {user} = useContext(userContext)
 
     let submit = event=>{
