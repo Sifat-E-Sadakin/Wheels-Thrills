@@ -12,15 +12,18 @@ const PrivateRoute = ({children}) => {
     // console.log(location);
 
     if(loading){
-        return <Triangle
-        height="80"
-        width="80"
-        color="#4fa94d"
+        return <div className='spinner'>
+          <Triangle
+        
+        height="200"
+        width="200"
+        color="#000000"
         ariaLabel="triangle-loading"
         wrapperStyle={{}}
         wrapperClassName=""
         visible={true}
       />
+        </div>
 
 
     }
