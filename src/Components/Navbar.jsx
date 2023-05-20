@@ -4,6 +4,7 @@ import { userContext } from './UserProvider';
 import logo from './../../public/images/Logo/Screenshot_2023-05-19_225627-removebg-preview.png'
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip as ReactTooltip, Tooltip } from 'react-tooltip'
+import ActiveRoute from './ActiveRoute';
 
 
 const Navbar = () => {
@@ -38,12 +39,12 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 space-x-5">
-                        <Link to='/'>Home</Link>
-                        <Link to='/allToys'>All Toys</Link>
-                        {user && <Link to='/myToys'>My Toys</Link>}
-                        {user && <Link to='/addToy'>Add Toy</Link>}
-                        <Link to='/blog'>Blog</Link>
-                        {user ? <></> : <Link to='/signUp'>Sign Up</Link>}
+                        <ActiveRoute to='/'>Home</ActiveRoute>
+                        <ActiveRoute to='/allToys'>All Toys</ActiveRoute>
+                        {user && <ActiveRoute to='/myToys'>My Toys</ActiveRoute>}
+                        {user && <ActiveRoute to='/addToy'>Add Toy</ActiveRoute>}
+                        <ActiveRoute to='/blog'>Blog</ActiveRoute>
+                        {user ? <></> : <ActiveRoute to='/signUp'>Sign Up</ActiveRoute>}
                         {/* <Link to='/login'>Login</Link> */}
                         {user && <button onClick={logout}>Sign Out</button>}
                     </ul>
