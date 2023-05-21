@@ -31,6 +31,13 @@ const MyToys = () => {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
+                    .then(data=>{
+                        let remaining = toys.filter(toy => toy._id != id);
+                        setToys(remaining)
+                        // console.log(remaining);
+
+                    })
+                   
 
                 Swal.fire(
                     'Deleted!',
