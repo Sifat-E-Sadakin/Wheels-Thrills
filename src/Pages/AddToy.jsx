@@ -154,6 +154,7 @@ const AddToy = () => {
                             className="w-full px-3 py-2 border border-gray-300 rounded"
                             name='rating'
                             required
+                            step='any'
                             placeholder='0 to 5'
                         />
                     </div>
