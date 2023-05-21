@@ -23,8 +23,8 @@ const AddToy = () => {
         let sName = event.target.sName.value;
         let sEmail = event.target.sEmail.value;
         let subcategory = event.target.subcategory.value;
-        let price = parseInt( event.target.price.value);
-        
+        let price = parseInt(event.target.price.value);
+
         let rating = event.target.rating.value;
         let quantity = event.target.quantity.value;
         let description = event.target.description.value;
@@ -46,7 +46,7 @@ const AddToy = () => {
                     Swal.fire(`${tName}`,
                         'Added Successfully',
                         'success')
-                     event.target.reset()
+                    event.target.reset()
                 }
             })
 

@@ -15,44 +15,56 @@ const AllToys = () => {
 
     let toys = useLoaderData();
 
-    let [findToy, setFindToy ] = useState(toys)
+    let [findToy, setFindToy] = useState(toys)
 
-    let remove =()=>{
+    let remove = () => {
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
             text: 'Only Admin Can delete item from here',
             footer: '<a href="">Join Our team to become an admin</a>'
-          })
+        })
 
     }
-    
-    
 
-     
-    
+
+    let showAll = async () => {
+
+        let res = await fetch('https://assignment-11-back-end.vercel.app/alltoys')
+        let data = await res.json();
+        setFindToy(data)
+        let btn = document.getElementById('all')
+        btn.style.display = 'none'
+
+
+
+    }
+
+
+
+
 
     const find = async () => {
         try {
-          let   item=  document.getElementById('search').value
-          console.log(item);
-          const response = await fetch(`https://assignment-11-back-end.vercel.app/toys/find?tName=${item}`);
-          const data = await response.json();
-          console.log(data);
-          setFindToy(data);
-          if(data){
-            let  input= document.getElementById('search')
-            input.value = ''
-          }
-         
-          if(!item){
-            setFindToy(toys)
-            
-          }
+            let item = document.getElementById('search').value
+            console.log(item);
+            const response = await fetch(`https://assignment-11-back-end.vercel.app/toys/find?tName=${item}`);
+            const data = await response.json();
+            console.log(data);
+            setFindToy(data);
+            if (data) {
+                let input = document.getElementById('search')
+                input.value = ''
+            }
+
+            if (!item) {
+                setFindToy(toys)
+
+            }
         } catch (error) {
-          console.error('Error searching data:', error);
+            console.error('Error searching data:', error);
         }
-      };
+    };
 
 
 
@@ -62,10 +74,10 @@ const AllToys = () => {
         <div className='container mx-auto'>
             <div className='text-center text-3xl my-10 space-y-5'>
                 <h1>List Of All Available Toys</h1>
-                
+
                 <div className='space-x-3 items-center'>
-                <input id='search' type="text" placeholder="Search Toy" className="input input-bordered input-secondary w-full max-w-xs" />
-                <button onClick={()=>find()}   className='btn btn-primary'>Search</button>
+                    <input id='search' type="text" placeholder="Search Toy" className="input input-bordered input-secondary w-full max-w-xs" />
+                    <button onClick={() => find()} className='btn btn-primary'>Search</button>
                 </div>
             </div>
 
@@ -130,6 +142,10 @@ const AllToys = () => {
 
 
                 </table>
+
+                <div className='text-center my-5'>
+                    <button id='all' onClick={showAll} className='btn btn-primary '>All toys</button>
+                </div>
             </div>
 
         </div>
