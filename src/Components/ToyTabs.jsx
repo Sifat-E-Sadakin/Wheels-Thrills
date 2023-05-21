@@ -19,7 +19,7 @@ const ToyTabs = () => {
 
 
     useEffect(() => {
-        fetch('https://assignment-11-back-end.vercel.app/toys')
+        fetch('https://assignment-11-back-end.vercel.app/alltoys')
             .then(res => res.json())
             .then(data => {
                 setToys(data)
