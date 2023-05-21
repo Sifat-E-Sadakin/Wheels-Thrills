@@ -15,6 +15,8 @@ const MyToys = () => {
 
     let { email } = user
 
+    // console.log(toys);
+
 
     let remove = async (id) => {
         Swal.fire({

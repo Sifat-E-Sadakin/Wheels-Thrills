@@ -23,13 +23,15 @@ const AddToy = () => {
         let sName = event.target.sName.value;
         let sEmail = event.target.sEmail.value;
         let subcategory = event.target.subcategory.value;
-        let price = event.target.price.value;
+        let price = parseInt( event.target.price.value);
+        
         let rating = event.target.rating.value;
         let quantity = event.target.quantity.value;
         let description = event.target.description.value;
 
         // console.log({photo,tName,sName, sEmail, subcategory, price, rating,quantity, description} );
         let toy = { photo, tName, sName, sEmail, subcategory, price, rating, quantity, description }
+        // console.log(toy);
         fetch('https://assignment-11-back-end.vercel.app/addToy', {
             method: 'POST',
             headers: {
@@ -44,7 +46,7 @@ const AddToy = () => {
                     Swal.fire(`${tName}`,
                         'Added Successfully',
                         'success')
-                    event.target.reset()
+                     event.target.reset()
                 }
             })
 

@@ -14,12 +14,12 @@ const UpdateToy = () => {
     useTitle('Update Toy')
 
     let toy = useLoaderData()
-    console.log(toy._id);
+    // console.log(toy._id);
 
     let submit = event=>{
 
         event.preventDefault();
-        let price = event.target.price.value;
+        let price = parseInt(event.target.price.value);
         let quantity = event.target.quantity.value;
         let description = event.target.description.value;
 
@@ -55,7 +55,7 @@ const UpdateToy = () => {
                         Price
                     </label>
                     <input
-                        type="text"
+                        type="number"
                         id="price"
                         className="w-full px-3 py-2 border border-gray-300 rounded"
                         
