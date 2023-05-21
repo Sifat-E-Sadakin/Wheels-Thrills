@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useTitle from '../Hooks/useTitle';
 
 const UpdateToy = () => {
+
+    useEffect(() => {
+        window.scroll(0, 0);
+
+
+    }, [])
 
     useTitle('Update Toy')
 

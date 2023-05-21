@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import picture from './../../public/images/Login/Data_security_05.jpg'
 import { userContext } from '../Components/UserProvider';
 import useTitle from '../Hooks/useTitle';
@@ -7,6 +7,13 @@ import { Google } from '@mui/icons-material';
 
 
 const SignUp = () => {
+
+    useEffect(() => {
+        window.scroll(0, 0);
+
+
+    }, [])
+    
     useTitle('Sign Up')
 
     let { createUser, updateUser, googlePopUp } = useContext(userContext);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Banner from '../Components/Banner';
 import ToyTabs from '../Components/ToyTabs';
 import GallerySection from '../Components/GallerySection';
@@ -38,6 +38,13 @@ AOS.init({
 });
 
 const HomePage = () => {
+
+    useEffect(() => {
+        window.scroll(0, 0);
+
+
+    }, [])
+
     useTitle('Home')
     return (
         <div>

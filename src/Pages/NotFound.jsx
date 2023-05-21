@@ -1,11 +1,16 @@
 import { Link } from 'react-router-dom';
 import pic from './../../public/images/404/2634442.jpg'
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import useTitle from '../Hooks/useTitle';
 
 
 const NotFound = () => {
+    useEffect(() => {
+        window.scroll(0, 0);
+
+
+    }, [])
     useTitle('404')
     return (
         <div className="hero min-h-screen" style={{ backgroundImage: `url("/images/404/2634442.jpg")` }}>

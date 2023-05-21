@@ -1,9 +1,15 @@
 import { Rating } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import useTitle from '../Hooks/useTitle';
 
 const ToyDetails = () => {
+
+    useEffect(() => {
+        window.scroll(0, 0);
+
+
+    }, [])
 
     useTitle('Toy Details')
     let toy = useLoaderData();
@@ -11,10 +17,10 @@ const ToyDetails = () => {
     return (
         <div className='container mx-auto'>
             <h1 className='text-4xl font-semibold text-center my-12'>Toy Details</h1>
-            <div className=" ">
-                <div className=" flex lg:flex-row gap-12 ">
+            <div className="  ">
+                <div className=" lg:flex lg:flex-row gap-12 space-y-5">
                     <div className=''>
-                        <img src={toy.photo} className="max-w-xl rounded-lg shadow-2xl" />
+                        <img src={toy.photo} className="max-w-sm lg:max-w-xl rounded-lg shadow-2xl" />
                     </div>
 
                     <div className='space-y-5'>

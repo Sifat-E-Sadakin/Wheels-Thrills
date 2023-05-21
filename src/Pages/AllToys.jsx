@@ -5,6 +5,12 @@ import useTitle from '../Hooks/useTitle';
 
 const AllToys = () => {
 
+    useEffect(() => {
+        window.scroll(0, 0);
+
+
+    }, [])
+
     useTitle('All Toys')
 
     let toys = useLoaderData();

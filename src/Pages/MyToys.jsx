@@ -66,6 +66,12 @@ const MyToys = () => {
             .then(data => setToys(data))
     }, [])
 
+    useEffect(() => {
+        window.scroll(0, 0);
+
+
+    }, [])
+
     return (
         <div className='container mx-auto'>
             <h1 className='text-center text-3xl my-10'>Toys of {user.displayName}</h1>

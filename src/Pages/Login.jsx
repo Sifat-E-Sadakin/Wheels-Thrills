@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import picture from './../../public/images/Login/Data_security_05.jpg'
 import { userContext } from '../Components/UserProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -6,6 +6,12 @@ import useTitle from '../Hooks/useTitle';
 import { Google } from '@mui/icons-material';
 
 const Login = () => {
+
+    useEffect(() => {
+        window.scroll(0, 0);
+
+
+    }, [])
 
     useTitle('Login')
     let { signIn, googlePopUp } = useContext(userContext)

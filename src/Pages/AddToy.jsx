@@ -1,10 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { userContext } from '../Components/UserProvider';
 import Swal from 'sweetalert2'
 import useTitle from '../Hooks/useTitle';
 
 
 const AddToy = () => {
+
+    useEffect(() => {
+        window.scroll(0, 0);
+
+
+    }, [])
 
     useTitle('Add Toy')
     let { user } = useContext(userContext)
