@@ -66,7 +66,7 @@ const ToyTabs = () => {
                         {
                             cars.map(vehicle => <div key={vehicle._id}>
                                 <div className="card card-compact w-96 bg-base-100 shadow-xl">
-                                    <figure><img src={vehicle.photo} alt="Shoes" /></figure>
+                                    <figure className='max-h-60'><img src={vehicle.photo} alt="Shoes" /></figure>
                                     <div className="card-body">
                                         <h2 className="card-title">{vehicle.tName}</h2>
                                         <div>
@@ -90,7 +90,7 @@ const ToyTabs = () => {
                         {
                             bus.map(vehicle => <div key={vehicle._id}>
                                 <div className="card card-compact w-96 bg-base-100 shadow-xl">
-                                    <figure><img src={vehicle.photo} alt="Shoes" /></figure>
+                                    <figure className='max-h-60'><img src={vehicle.photo} alt="Shoes" /></figure>
                                     <div className="card-body">
                                         <h2 className="card-title">{vehicle.tName}</h2>
                                         <div>
@@ -115,7 +115,7 @@ const ToyTabs = () => {
                         {
                             trucks.map(vehicle => <div key={vehicle._id}>
                                 <div className="card card-compact w-96 bg-base-100 shadow-xl">
-                                    <figure><img src={vehicle.photo} alt="Shoes" /></figure>
+                                    <figure className='max-h-60'><img src={vehicle.photo} alt="Shoes" /></figure>
                                     <div className="card-body">
                                         <h2 className="card-title">{vehicle.tName}</h2>
                                         <div>
@@ -139,7 +139,7 @@ const ToyTabs = () => {
                         {
                             train.map(vehicle => <div key={vehicle._id}>
                                 <div className="card card-compact w-96 bg-base-100 shadow-xl">
-                                    <figure><img src={vehicle.photo} alt="Shoes" /></figure>
+                                    <figure className='max-h-60'><img src={vehicle.photo} alt="Shoes" /></figure>
                                     <div className="card-body">
                                         <h2 className="card-title">{vehicle.tName}</h2>
                                         <div>
