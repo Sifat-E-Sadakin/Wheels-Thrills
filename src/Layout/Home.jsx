@@ -13,6 +13,7 @@ const Home = () => {
     return (
         <div>
             <Navbar></Navbar>
+            
             <div className='spinner'>
                 {navigation.state == 'loading' ? <Triangle
                     height="300"
